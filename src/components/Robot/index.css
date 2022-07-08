@@ -42,6 +42,24 @@
   }
 }
 
+@keyframes goup {
+  0% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 250px;
+  }
+}
+
+@keyframes godown {
+  0% {
+    bottom: 250px;
+  }
+  100% {
+    bottom: 50px;
+  }
+}
+
 .robot-main-container {
   height: 500px;
   width: 976px;
@@ -107,4 +125,70 @@
   bottom: 60px;
   transform: rotate(-90deg);
   animation-name: enter;
+}
+
+.robot-drill {
+  position: absolute;
+  bottom: 250px;
+  left: 400px;
+  height: 200px;
+  width: 200px;
+  z-index: 7;
+  background-image: url("../../../public/images/drill.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  transition: all 0.5s ease;
+  animation-name: goup;
+}
+
+.robot-drill.on {
+  bottom: 50px;
+  animation-name: godown;
+}
+
+.robot-t1,
+.robot-t2,
+.robot-e1,
+.robot-e2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+}
+.robot-sensor-span {
+  color: #fbfff1;
+  font-size: 12px;
+  text-align: center;
+}
+.robot-e1,
+.robot-e2 {
+  background-color: #efa00b;
+}
+.robot-t1,
+.robot-t2 {
+  background-color: #d65108;
+}
+
+.robot-t1 {
+  right: 330px;
+  top: 70px;
+}
+.robot-t2 {
+  right: 330px;
+  bottom: 200px;
+}
+.robot-e1 {
+    bottom: 10px;
+    left: 485px;
+}
+.robot-e2 {
+    bottom: 10px;
+    right: 130px;
 }
