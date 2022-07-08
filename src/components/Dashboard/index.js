@@ -9,8 +9,6 @@ const Dashboard = () => {
     PROCESS_DEFAULT_INITIALIZED
   );
 
-  console.log("process initialized", processInitialized);
-
   return (
     <div className="dashboard-container">
       <h1 className="dashboard-header-1">Dashboard</h1>

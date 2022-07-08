@@ -18,7 +18,6 @@ const Robot = ({ processIsActive }) => {
     let activeRunInterval;
 
     if (activeRun) {
-      console.log("intervals activated");
       firstDrillInterval = setTimeout(() => {
         if (activeRun) {
           setDrillIsActive(true);
