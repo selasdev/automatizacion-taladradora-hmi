@@ -1,0 +1,110 @@
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0.1deg);
+  }
+}
+
+@keyframes updown {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 1px;
+  }
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+    bottom: 200px;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-90deg);
+    bottom: 60px;
+  }
+}
+
+@keyframes leave {
+  0% {
+    transform: rotate(-90deg);
+    opacity: 1;
+    bottom: 60px;
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 0;
+    bottom: 200px;
+  }
+}
+
+.robot-main-container {
+  height: 500px;
+  width: 976px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.robot-conveyor-belt {
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  background-image: url("../../../public/images/conveyor-belt.png");
+  background-position-x: 50%;
+}
+.robot-conveyor-belt.on {
+  animation-name: wiggle;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  transition: all 0.2s ease;
+}
+
+.robot-generator {
+  z-index: 5;
+  position: absolute;
+  bottom: 0px;
+  left: -15px;
+  width: 200px;
+  height: 300px;
+  background-image: url("../../../public/images/generator.png");
+  background-position-x: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.robot-generator.on {
+  animation-name: updown;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  transition: all 0.2s ease;
+}
+
+.robot-final-box {
+  position: absolute;
+  bottom: 200px;
+  right: -60px;
+  width: 200px;
+  height: 120px;
+  z-index: 5;
+  transform: rotate(0deg);
+  background-image: url("../../../public/images/final-box.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation-name: leave;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  transition: all 0.2s ease;
+}
+
+.robot-final-box.on {
+  opacity: 1;
+  bottom: 60px;
+  transform: rotate(-90deg);
+  animation-name: enter;
+}
