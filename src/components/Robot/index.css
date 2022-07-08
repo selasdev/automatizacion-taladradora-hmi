@@ -44,7 +44,7 @@
 
 @keyframes goup {
   0% {
-    bottom: 50px;
+    bottom: 90px;
   }
   100% {
     bottom: 250px;
@@ -56,7 +56,7 @@
     bottom: 250px;
   }
   100% {
-    bottom: 50px;
+    bottom: 90px;
   }
 }
 
@@ -84,7 +84,7 @@
 }
 
 .robot-generator {
-  z-index: 5;
+  z-index: 6;
   position: absolute;
   bottom: 0px;
   left: -15px;
@@ -108,7 +108,7 @@
   right: -60px;
   width: 200px;
   height: 120px;
-  z-index: 5;
+  z-index: 8;
   transform: rotate(0deg);
   background-image: url("../../../public/images/final-box.png");
   background-size: contain;
@@ -133,7 +133,7 @@
   left: 400px;
   height: 200px;
   width: 200px;
-  z-index: 7;
+  z-index: 2;
   background-image: url("../../../public/images/drill.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -144,7 +144,7 @@
 }
 
 .robot-drill.on {
-  bottom: 50px;
+  bottom: 90px;
   animation-name: godown;
 }
 
@@ -182,13 +182,52 @@
 }
 .robot-t2 {
   right: 330px;
-  bottom: 200px;
+  bottom: 240px;
 }
 .robot-e1 {
-    bottom: 10px;
-    left: 485px;
+  bottom: 10px;
+  left: 485px;
 }
 .robot-e2 {
-    bottom: 10px;
-    right: 130px;
+  bottom: 10px;
+  right: 130px;
 }
+
+.robot-piece {
+  z-index: 4;
+  position: absolute;
+  bottom: 50px;
+  left: 80px;
+  width: 100px;
+  height: 100px;
+  z-index: 5;
+  background-image: url("../../../public/images/piece.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+@keyframes pieceprocess {
+    0% {
+        left: 80px;
+    }
+    25%{
+        left: 480px;
+    }
+    75%{
+        left: 480px;
+    }
+    100% {
+      left: 880px;
+    }
+  }
+
+.robot-piece.on {
+    left: 880px;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    transition: all 0.5s ease;
+    animation-name: pieceprocess;
+    opacity: 1;
+  }
+

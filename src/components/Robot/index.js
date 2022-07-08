@@ -29,6 +29,9 @@ const Robot = ({ processIsActive }) => {
       <div className="robot-t2">
         <span className="robot-sensor-span">T2</span>
       </div>
+      <div
+        className={processIsActive ? "robot-piece on" : "robot-piece"}
+      ></div>
     </div>
   );
 };
