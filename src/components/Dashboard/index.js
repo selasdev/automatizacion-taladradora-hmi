@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { PROCESS_DEFAULT_INITIALIZED } from "../../config";
 import Controls from "../Controls";
+import Robot from "../Robot";
 import "./index.css";
 
 const Dashboard = () => {
@@ -8,7 +9,7 @@ const Dashboard = () => {
     PROCESS_DEFAULT_INITIALIZED
   );
 
-  console.log(processInitialized);
+  console.log("process initialized", processInitialized);
 
   return (
     <div className="dashboard-container">
@@ -17,6 +18,7 @@ const Dashboard = () => {
         initialState={PROCESS_DEFAULT_INITIALIZED}
         onToggle={setProcessInitialization}
       />
+      <Robot processIsActive={processInitialized} />
     </div>
   );
 };
